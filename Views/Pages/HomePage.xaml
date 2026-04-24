@@ -1,0 +1,125 @@
+<Page
+  x:Class="GalleryUI.Views.Pages.HomePage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="clr-namespace:GalleryUI.Views.Pages"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  Title="下载"
+  d:DesignHeight="450"
+  d:DesignWidth="800"
+  ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+  ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  mc:Ignorable="d"
+>
+  <Grid Margin="24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <!-- 环境检测提示 -->
+    <ui:InfoBar
+      x:Name="EnvironmentInfoBar"
+      Grid.Row="0"
+      Margin="0,0,0,12"
+      IsClosable="False"
+      IsOpen="False"
+      Severity="Error"
+      Title="环境缺失"
+      Message="未找到 gallery-dl.exe，请前往设置页面查看详情" />
+
+    <!-- 输入区域 - 垂直居中 -->
+    <Border Grid.Row="1" VerticalAlignment="Center">
+      <StackPanel MaxWidth="700" HorizontalAlignment="Center">
+        <!-- 标题区域 -->
+        <StackPanel Margin="0,0,0,24" HorizontalAlignment="Center">
+          <ui:SymbolIcon
+            Margin="0,0,0,16"
+            FontSize="64"
+            Symbol="ArrowDownload24" />
+          <ui:TextBlock
+            HorizontalAlignment="Center"
+            FontTypography="TitleLarge"
+            Text="开始下载" />
+          <ui:TextBlock
+            Margin="0,8,0,0"
+            HorizontalAlignment="Center"
+            Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+            Text="输入漫画页面链接"
+            TextAlignment="Center" />
+        </StackPanel>
+
+        <!-- 输入区域 -->
+        <StackPanel>
+          <TextBox
+            x:Name="UrlTextBox"
+            MinWidth="550"
+            Height="44"
+            Background="{DynamicResource ControlFillColorDefaultBrush}"
+            Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+            BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            Padding="12"
+            FontSize="14"
+            VerticalContentAlignment="Center">
+            <TextBox.Resources>
+              <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="6" />
+              </Style>
+            </TextBox.Resources>
+          </TextBox>
+          <StackPanel
+            Margin="0,20,0,0"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <ui:Button
+              x:Name="ClearButton"
+              Width="140"
+              Height="40"
+              Margin="0,0,16,0"
+              Appearance="Secondary"
+              Click="OnClearButtonClick"
+              Content="清空" />
+            <ui:Button
+              x:Name="DownloadButton"
+              Width="140"
+              Height="40"
+              Appearance="Primary"
+              Click="OnDownloadButtonClick">
+              <Grid>
+                <StackPanel
+                  x:Name="DownloadButtonContent"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Orientation="Horizontal">
+                  <ui:SymbolIcon Symbol="Play24" />
+                  <TextBlock Margin="8,0,0,0" Text="开始下载" />
+                </StackPanel>
+                <ui:ProgressRing
+                  x:Name="DownloadProgressRing"
+                  Width="24"
+                  Height="24"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  IsIndeterminate="True"
+                  Visibility="Collapsed" />
+              </Grid>
+            </ui:Button>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- 提示文字 -->
+        <ui:TextBlock
+          Margin="0,16,0,0"
+          HorizontalAlignment="Center"
+          FontTypography="Caption"
+          Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+          Text="请勿频繁请求，否则可能会被该平台封禁"
+          TextAlignment="Center" />
+      </StackPanel>
+    </Border>
+  </Grid>
+</Page>

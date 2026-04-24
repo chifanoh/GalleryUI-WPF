@@ -1,0 +1,154 @@
+<Page
+  x:Class="GalleryUI.Views.Pages.ManualPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="clr-namespace:GalleryUI.Views.Pages"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  Title="手册"
+  d:DesignHeight="450"
+  d:DesignWidth="800"
+  ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+  ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  mc:Ignorable="d"
+>
+  <Grid Margin="24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <ui:TextBlock
+      Grid.Row="0"
+      Margin="0,0,0,12"
+      FontTypography="BodyStrong"
+      Text="使用手册" />
+
+    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+      <StackPanel>
+        <ui:CardExpander Margin="0,0,0,8" Icon="{ui:SymbolIcon Book24}">
+          <ui:CardExpander.Header>
+            <StackPanel>
+              <ui:TextBlock FontTypography="Body" Text="使用指南" />
+              <ui:TextBlock
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="如何下载漫画" />
+            </StackPanel>
+          </ui:CardExpander.Header>
+          <StackPanel Margin="16">
+            <ui:TextBlock Margin="0,0,0,8" FontTypography="BodyStrong" Text="1. 获取漫画链接" />
+            <ui:TextBlock
+              Margin="0,0,0,16"
+              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+              Text="在支持的漫画网站中打开想要下载的漫画页面，复制浏览器地址栏中的URL。"
+              TextWrapping="Wrap" />
+
+            <ui:TextBlock Margin="0,0,0,8" FontTypography="BodyStrong" Text="2. 粘贴链接" />
+            <ui:TextBlock
+              Margin="0,0,0,16"
+              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+              Text="将复制的链接粘贴到下载页面的输入框中。"
+              TextWrapping="Wrap" />
+
+            <ui:TextBlock Margin="0,0,0,8" FontTypography="BodyStrong" Text="3. 开始下载" />
+            <ui:TextBlock
+              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+              Text="点击开始下载按钮，等待下载完成。下载的文件将保存在设置中指定的目录。"
+              TextWrapping="Wrap" />
+          </StackPanel>
+        </ui:CardExpander>
+
+        <ui:CardExpander Margin="0,0,0,8" Icon="{ui:SymbolIcon Globe24}">
+          <ui:CardExpander.Header>
+            <StackPanel>
+              <ui:TextBlock FontTypography="Body" Text="支持的网站" />
+              <ui:TextBlock
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="gallery-dl 支持的漫画网站列表" />
+            </StackPanel>
+          </ui:CardExpander.Header>
+          <StackPanel Margin="16">
+            <ui:TextBlock
+              Margin="0,0,0,8"
+              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+              Text="本软件基于 gallery-dl，支持绝大多数主流漫画网站，包括但不限于："
+              TextWrapping="Wrap" />
+            <ui:TextBlock Text="• nhentai" />
+            <ui:TextBlock Text="• comick" />
+            <ui:TextBlock Text="• dandadan" />
+            <ui:TextBlock Text="• hentaihere" />
+            <Grid Margin="0,12,0,0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <ui:TextBlock
+                Grid.Column="0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="查看更多站点..."
+                VerticalAlignment="Center" />
+              <ui:Anchor
+                Grid.Column="1"
+                Margin="8,0,0,0"
+                Padding="0"
+                VerticalAlignment="Center"
+                Background="Transparent"
+                BorderThickness="0"
+                NavigateUri="https://github.com/mikf/gallery-dl/blob/master/docs/supportedsites.md">
+                <ui:SymbolIcon
+                  Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                  Symbol="Link24" />
+              </ui:Anchor>
+            </Grid>
+          </StackPanel>
+        </ui:CardExpander>
+
+        <ui:CardExpander Icon="{ui:SymbolIcon QuestionCircle24}">
+          <ui:CardExpander.Header>
+            <StackPanel>
+              <ui:TextBlock FontTypography="Body" Text="常见问题" />
+              <ui:TextBlock
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="遇到问题？查看解决方案" />
+            </StackPanel>
+          </ui:CardExpander.Header>
+          <StackPanel Margin="16">
+            <ui:TextBlock Margin="0,0,0,8" FontTypography="BodyStrong" Text="Q: 下载失败怎么办？" />
+            <ui:TextBlock
+              Margin="0,0,0,16"
+              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+              Text="A: 请检查网络连接，确认链接是否有效，部分网站可能需要配置 Cookie 或代理。"
+              TextWrapping="Wrap" />
+
+            <ui:TextBlock Margin="0,0,0,8" FontTypography="BodyStrong" Text="Q: gallery-dl 环境丢失怎么办？" />
+            <Grid Margin="0,0,0,16">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <ui:TextBlock
+                Grid.Column="0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="A: 项目已包含 gallery-dl，无需单独安装 gallery-dl，若环境丢失，点击右侧链接跳转下载最新版本，放到项目目录下即可。"
+                TextWrapping="Wrap" />
+              <ui:Anchor
+                Grid.Column="1"
+                Margin="8,0,0,0"
+                Padding="0"
+                VerticalAlignment="Center"
+                Background="Transparent"
+                BorderThickness="0"
+                NavigateUri="https://github.com/mikf/gallery-dl/releases">
+                <ui:SymbolIcon
+                  Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                  Symbol="Link24" />
+              </ui:Anchor>
+            </Grid>
+          </StackPanel>
+        </ui:CardExpander>
+      </StackPanel>
+    </ScrollViewer>
+  </Grid>
+</Page>

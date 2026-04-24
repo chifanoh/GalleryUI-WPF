@@ -1,0 +1,22 @@
+<Application
+  x:Class="GalleryUI.App"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="clr-namespace:GalleryUI.Converters"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  StartupUri="MainWindow.xaml"
+>
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ui:ThemesDictionary Theme="Dark" />
+        <ui:ControlsDictionary />
+      </ResourceDictionary.MergedDictionaries>
+
+      <!-- 转换器 -->
+      <local:StatusToTextConverter x:Key="StatusToTextConverter" />
+      <local:StatusToBrushConverter x:Key="StatusToBrushConverter" />
+      <local:StatusToBackgroundConverter x:Key="StatusToBackgroundConverter" />
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
