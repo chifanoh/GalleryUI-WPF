@@ -62,47 +62,35 @@
 
         <ui:CardExpander Margin="0,0,0,8" Icon="{ui:SymbolIcon Globe24}">
           <ui:CardExpander.Header>
-            <StackPanel>
-              <ui:TextBlock FontTypography="Body" Text="支持的网站" />
-              <ui:TextBlock
-                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
-                Text="gallery-dl 支持的漫画网站列表" />
-            </StackPanel>
-          </ui:CardExpander.Header>
-          <StackPanel Margin="16">
             <ui:TextBlock
-              Margin="0,0,0,8"
-              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
-              Text="本软件基于 gallery-dl，支持绝大多数主流漫画网站，包括但不限于："
-              TextWrapping="Wrap" />
-            <ui:TextBlock Text="• nhentai" />
-            <ui:TextBlock Text="• comick" />
-            <ui:TextBlock Text="• dandadan" />
-            <ui:TextBlock Text="• hentaihere" />
-            <Grid Margin="0,12,0,0">
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-              </Grid.ColumnDefinitions>
-              <ui:TextBlock
-                Grid.Column="0"
+              VerticalAlignment="Center"
+              FontTypography="Body"
+              Text="支持站点详细说明" />
+          </ui:CardExpander.Header>
+          <Grid Margin="16">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <ui:TextBlock
+              Grid.Column="0"
+              Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+              Text="本项目初衷为面向nhentai.net（包括但不限于）站点漫画下载，未能适配所有网站望海涵，更多详细见官方文档。"
+              TextWrapping="Wrap"
+              VerticalAlignment="Center" />
+            <ui:Anchor
+              Grid.Column="1"
+              Margin="8,0,0,0"
+              Padding="0"
+              VerticalAlignment="Center"
+              Background="Transparent"
+              BorderThickness="0"
+              NavigateUri="https://github.com/mikf/gallery-dl/blob/master/docs/supportedsites.md">
+              <ui:SymbolIcon
                 Foreground="{DynamicResource TextFillColorSecondaryBrush}"
-                Text="查看更多站点..."
-                VerticalAlignment="Center" />
-              <ui:Anchor
-                Grid.Column="1"
-                Margin="8,0,0,0"
-                Padding="0"
-                VerticalAlignment="Center"
-                Background="Transparent"
-                BorderThickness="0"
-                NavigateUri="https://github.com/mikf/gallery-dl/blob/master/docs/supportedsites.md">
-                <ui:SymbolIcon
-                  Foreground="{DynamicResource TextFillColorSecondaryBrush}"
-                  Symbol="Link24" />
-              </ui:Anchor>
-            </Grid>
-          </StackPanel>
+                Symbol="Link24" />
+            </ui:Anchor>
+          </Grid>
         </ui:CardExpander>
 
         <ui:CardExpander Icon="{ui:SymbolIcon QuestionCircle24}">
@@ -119,7 +107,7 @@
             <ui:TextBlock
               Margin="0,0,0,16"
               Foreground="{DynamicResource TextFillColorSecondaryBrush}"
-              Text="A: 请检查网络连接，确认链接是否有效，部分网站可能需要配置 Cookie 或代理。"
+              Text="A: 请检查网络连接（可开启代理后再尝试），链接是否有效，部分网站配备防火墙或需配置 Cookie 等。"
               TextWrapping="Wrap" />
 
             <ui:TextBlock Margin="0,0,0,8" FontTypography="BodyStrong" Text="Q: gallery-dl 环境丢失怎么办？" />
