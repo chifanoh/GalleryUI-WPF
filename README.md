@@ -27,3 +27,6 @@
 ## 📋 依赖说明
 
 本工具依赖 `gallery-dl.exe` 来执行下载任务。软件包内已包含该程序，无需额外安装。
+
+## 需要在 macOS 或 Linux 上使用？喜欢网页风格的界面？**  
+试试跨平台 Electron 版本 → **[Gallery-UI](https://github.com/chifanoh/Gallery-UI)**
